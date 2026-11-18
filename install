@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+here="$(cd "$(dirname "$0")" && pwd)"
+home="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+stamp="$(date +%Y%m%d-%H%M%S)"
+trial_name="orchestrator-next"
+skill_name="orchestrator"
+
+if [ "$#" -gt 1 ]; then
+  echo "usage: ./install [--trial]"
+  exit 1
+fi
+case "${1:-}" in
+  "") ;;
+  --trial) skill_name="$trial_name" ;;
+  *)
+    echo "usage: ./install [--trial]"
+    exit 1
+    ;;
+esac
+if [ ! -f "$here/skills/orchestrator/SKILL.md" ]; then
+  echo "run install from inside its own folder: $here has no skills/orchestrator"
+  exit 1
+fi
+
+link() {
+  local source="$1" target="$2"
+  if [ -L "$target" ] && [ "$(readlink "$target")" = "$source" ]; then
+    return 0
+  fi
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    mkdir -p "$home/backups"
+    mv "$target" "$home/backups/$(basename "$target")-$stamp"
+    echo "kept your old $(basename "$target") in $home/backups"
+  fi
+  ln -s "$source" "$target"
+  echo "linked $target"
+}
+
+mkdir -p "$home/skills" "$home/agents"
+link "$here/skills/orchestrator" "$home/skills/$skill_name"
+for role in "$here"/agents/*.md; do
+  link "$role" "$home/agents/$(basename "$role")"
+done
+
+trial="$home/skills/$trial_name"
+if [ "$skill_name" = "orchestrator" ] && [ -L "$trial" ]; then
+  if [ "$(readlink "$trial")" = "$here/skills/orchestrator" ]; then
+    unlink "$trial"
+    echo "removed the trial link"
+  fi
+fi
+
+echo "done: start a new Claude Code session and type /$skill_name"
