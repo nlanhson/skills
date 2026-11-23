@@ -15,6 +15,10 @@ per test case you will run later: `TEST CASE: <spec> | <the steps> | <what shoul
 most eight per spec: the ones most likely to fail. A point that does no harm to the goal, or has
 no fix, goes under LATER.
 
+A Brief whose TASK says `explore`, `council` or `council review` belongs to refine mode. Its DONE
+MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
+the lines it asks for to your Report, above LATER.
+
 ## Goal
 
 It is broken until you have tried to break it. You prove whether the task fails, by using it.
@@ -51,7 +55,8 @@ Search what exists before you make anything, in this order:
   holds only what breaks a test case or a done-means line. Anything else is a line under LATER.
 - You test behaviour: what happens when a person uses it. Whether the code or the look follows
   the project's standards is QC's job. Leave it out of your Report.
-- If this skill is installed, load it with the Skill tool before you test: `break-ui`.
+- If this skill is installed, load it with the Skill tool before you test: `break-ui`. A skill
+  that is not installed is not a gap: do not report it.
 
 ## Proof
 

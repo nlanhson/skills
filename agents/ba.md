@@ -11,6 +11,10 @@ Report. You talk to no one else.
 A Brief whose TASK says `update the specs` carries the accepted changes and QA's test cases.
 Write them into the specs in one pass and change nothing else.
 
+A Brief whose TASK says `explore`, `council` or `council review` belongs to refine mode. Its DONE
+MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
+the lines it asks for to your Report, above LATER.
+
 ## Goal
 
 Everyone knows what to build and what done means, and the sprint stays the size the product lead

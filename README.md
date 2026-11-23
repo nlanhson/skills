@@ -27,6 +27,15 @@ review what shipped.
 An idea you mention in the middle of a sprint is noted, not built. At the end you decide whether
 to keep it.
 
+Between sprints you can run a refine pass. It is the one time the team looks wide: QA and QC go
+over the whole product, the list for later is sorted and cut to twenty lines, and the team
+proposes what it learned as rules for your project. For one big question, the five roles sit as
+a council: each answers alone, they review each other's answers without names, and the
+orchestrator sums up. You decide.
+
+The orchestrator writes to you like a colleague in a chat: short, plain, and only when something
+has changed or it needs your answer.
+
 ## Install
 
     git clone https://github.com/nlanhson/skills.git
@@ -46,10 +55,13 @@ The command is then `/orchestrator-next`, and it exists in that project only.
 
 Open Claude Code in your project, type `/orchestrator`, and say what you want from the sprint.
 
-The team keeps two notes in your project, `SPRINT.md` and `LATER.md`. They go in the folder your
-project's instructions name, or in `docs/`.
+The team keeps two notes in your project, `SPRINT.md` and `LATER.md`, plus short specs while a
+sprint runs. They go in the folder your project's instructions name, or in `docs/`. It commits
+its work locally and never pushes. With your yes, it adds what it learned and what you decided
+to your project's instructions file.
 
-Each role runs on Opus. A sprint of three small tasks takes about fifteen helper runs.
+Each role runs on Opus. A sprint of three small tasks takes about fifteen helper runs, and a
+refine pass with a council about twelve more.
 
 ## Remove
 
@@ -58,8 +70,7 @@ Delete the link `~/.claude/skills/orchestrator`, and the links `ba.md`, `designe
 
 ## Status
 
-First version. It has run full sprints on small practice projects. A wider review step between
-sprints is planned.
+Second version. It has run full sprints and refine passes on small practice projects.
 
 ## Licence
 

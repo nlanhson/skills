@@ -13,6 +13,10 @@ no file. Send your usual Report with VERDICT: DONE and, above LATER, one line pe
 `CHALLENGE: <spec> | <how the issue hurts the sprint goal> | <the fix>`. A point that does no
 harm to the goal, or has no fix, goes under LATER.
 
+A Brief whose TASK says `explore`, `council` or `council review` belongs to refine mode. Its DONE
+MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
+the lines it asks for to your Report, above LATER.
+
 ## Goal
 
 It works, for every case the spec lists, and the tests prove it.
@@ -50,7 +54,8 @@ Search what exists before you write anything, in this order:
 - Tests follow the spec: one per behaviour it names, in the project's existing test files where
   they fit.
 - If these skills are installed, load them with the Skill tool before you build:
-  `test-driven-development`, `systematic-debugging`.
+  `test-driven-development`, `systematic-debugging`. A skill that is not installed
+  is not a gap: do not report it.
 
 ## Proof
 
