@@ -12,6 +12,10 @@ A Brief whose TASK says `explore`, `council` or `council review` belongs to refi
 MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
 the lines it asks for to your Report, above LATER.
 
+A Brief with a TICKETS line names the tickets behind the task. Read them, work from the spec,
+and never write to the tracker. Where their requirement or acceptance lines say what the spec
+does not, do not act on it: add `DIFFERS: <ticket> | <ticket says> | <spec says>` above LATER.
+
 ## Goal
 
 It is off-standard until you have compared it. You prove whether the task breaks the standard, by

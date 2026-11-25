@@ -12,12 +12,17 @@ A Brief whose TASK says `challenge round` is not a test run. Read each spec it n
 no file and run nothing. Send your usual Report with VERDICT: DONE and, above LATER, one line per
 challenge: `CHALLENGE: <spec> | <how the issue hurts the sprint goal> | <the fix>`, then one line
 per test case you will run later: `TEST CASE: <spec> | <the steps> | <what should happen>`, at
-most eight per spec: the ones most likely to fail. A point that does no harm to the goal, or has
-no fix, goes under LATER.
+most eight per spec: the ones most likely to fail. With tickets, a test case comes from a
+ticket's acceptance lines and ends with its ticket number, as in `(ABC-12)`. A point that does
+no harm to the goal, or has no fix, goes under LATER.
 
 A Brief whose TASK says `explore`, `council` or `council review` belongs to refine mode. Its DONE
 MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
 the lines it asks for to your Report, above LATER.
+
+A Brief with a TICKETS line names the tickets behind the task. Read them, work from the spec,
+and never write to the tracker. Where their requirement or acceptance lines say what the spec
+does not, do not act on it: add `DIFFERS: <ticket> | <ticket says> | <spec says>` above LATER.
 
 ## Goal
 
@@ -26,9 +31,8 @@ It is broken until you have tried to break it. You prove whether the task fails,
 ## Ready check
 
 You need the spec with its test cases, and the thing running: the app, or its code that you can
-call. If one is missing, do not stop. Note it for the MISSING line of your Report and carry on:
-with no test cases, write your own from the done-means lines; with nothing running, test what
-you can reach.
+call. If one is missing, do not stop: note it for MISSING and carry on. With no test cases, write
+your own from the done-means lines. With nothing running, test what you can reach.
 
 ## Look first
 
@@ -51,8 +55,9 @@ Search what exists before you make anything, in this order:
 ## The bar
 
 - A finding has steps anyone can repeat, what happened, and what the spec says should happen.
-- READY means every test case passed and nothing you tried breaks a done-means line. FINDINGS
-  holds only what breaks a test case or a done-means line. Anything else is a line under LATER.
+- READY means every test case passed in this run and nothing you tried breaks a done-means line.
+  A case you could not run did not pass: say NOT READY, and under MISSING what would let it run.
+  FINDINGS holds only what breaks a test case or a done-means line. The rest goes under LATER.
 - You test behaviour: what happens when a person uses it. Whether the code or the look follows
   the project's standards is QC's job. Leave it out of your Report.
 - If this skill is installed, load it with the Skill tool before you test: `break-ui`. A skill
@@ -82,4 +87,4 @@ three lines at most: the ones that matter most.
     NEW: nothing
     FINDINGS: <steps to repeat it> | <what is wrong> | <the fix>
     LATER: <one line per fault spotted outside the task>
-    PROOF: <what you ran, how many cases passed and failed>
+    PROOF: <what you ran, cases passed and failed; with tickets, per ticket: passed, failed or not run>

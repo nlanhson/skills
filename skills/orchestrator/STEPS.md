@@ -2,9 +2,9 @@
 
 ## PLAN
 
-1. The product lead gives the goal. Put it in one sentence. You set the tasks and the time box.
-   Tasks come from what they asked for. A Confirmed line in `LATER.md` becomes a task
-   only when they picked it, and is then deleted from `LATER.md`.
+1. The product lead gives the goal, in words or as named tickets (then read TICKETS.md). Put
+   it in one sentence. You set the tasks and the time box. Tasks come from what they asked for.
+   A Confirmed line in `LATER.md` becomes a task only when they picked it, and is then deleted.
 2. Write the goal lines: numbered, each one true or false.
 3. Give each task a letter, a size (below) and the goal line it serves.
 4. Ready check. Does the team have what these tasks need: a design system when there is a
@@ -41,8 +41,9 @@
 9. Write `SPRINT.md`.
 10. STOP 1. Send the STOP 1 message in the stop shape from SKILL.md: the plan is ready and
     nothing is built; the time, as team time from their yes; at most three open choices, each
-    said as what will happen unless they object; what is missing; the question. The goal lines
-    and the task table stay in `SPRINT.md`.
+    said as what will happen unless they object; what is missing; with tickets, any clash with
+    their words and what to change in the tracker; the question. The goal lines and the task
+    table stay in `SPRINT.md`.
 11. On yes, start the Status with `STOP 1 passed` and the time, and commit the notes and the
     specs. If they pick a bigger option, the BA updates that spec first and the task is resized.
 
@@ -51,8 +52,7 @@
 - Normal: the full path.
 - Small: about 30 minutes or less at role pace, with nothing new to define. No BA and no
   challenge round. You write it as three lines in the Brief's SPEC (what, where, done means).
-  One role builds it and one role checks it: QC for a change of look or wording, QA for a change
-  of behaviour.
+  One role builds it and one checks it: QC for a change of look or wording, QA for behaviour.
 
 ## BUILD
 
@@ -69,8 +69,7 @@ Per task, in the order `SPRINT.md` gives:
 
 ## CHECK
 
-1. Per built task, start `qa` and `qc` side by side. Fill in CHANGED. Give QC the builders'
-   Reports.
+1. Per built task, start `qa` and `qc` side by side. Fill in CHANGED. QC gets the builders' Reports.
 2. Both say READY: the task is done. When all the tasks of a goal line are done, mark it true.
 3. One says NOT READY: send its FINDINGS to the builder who owns those files, then check again.
    Two rounds at most. Still failing: cut the task or park it in `LATER.md`, and say so.
@@ -79,8 +78,8 @@ Per task, in the order `SPRINT.md` gives:
 
 1. Check each goal line.
 2. STOP 2. Send the STOP 2 message in the stop shape: the verdict and each goal in plain words;
-   what was cut, parked or changed beyond the ask; how to see the result; then the question:
-   does it pass?
+   with tickets, which tickets passed and what to change in the tracker; what was cut, parked or
+   changed beyond the ask; how to see the result; then the question: does it pass?
 3. When they have answered, read back `## Ideas to confirm` one by one: keep (move it to
    Confirmed) or drop (delete it). Commit the notes.
 
@@ -100,6 +99,7 @@ Per task, in the order `SPRINT.md` gives:
 
     # Sprint <n>: <the goal in one sentence>
     Time box: <minutes of team time, counted from the product lead's yes>
+    Tickets: <numbers, only when the work came as tickets: then read TICKETS.md every session>
     Goal lines:
     1. <a line that is true or false>
 

@@ -17,6 +17,10 @@ A Brief whose TASK says `explore`, `council` or `council review` belongs to refi
 MEANS replaces your usual ready check, method and bar: do what it says, change no file, and add
 the lines it asks for to your Report, above LATER.
 
+A Brief with a TICKETS line names the tickets behind the task. Read them, work from the spec,
+and never write to the tracker. Where their requirement or acceptance lines say what the spec
+does not, do not act on it: add `DIFFERS: <ticket> | <ticket says> | <spec says>` above LATER.
+
 ## Goal
 
 It looks and feels right: a person can do the task without having to think about the screen.
@@ -44,13 +48,13 @@ part is made only when no existing one can, and your Report says why.
 
 ## Method
 
-1. List what the person needs to do on this screen, most frequent first.
-2. Look first.
-3. Sketch the layout in a few lines of words before you build.
-4. Build with existing parts and values.
-5. Build every state the spec lists.
-6. Take a screenshot of each state, at a small and a large width, and look at it.
-7. Fix what looks off: alignment, spacing, wrapping, what draws the eye first.
+1. List what the person needs to do on this screen, most frequent first. Then look first.
+2. Sketch the layout in a few lines of words before you build.
+3. Build every state the spec lists, with existing parts and values.
+4. Take a screenshot of each state, at a small and a large width, and look at it.
+5. Fix what looks off: alignment, spacing, wrapping, what draws the eye first. A fault that comes
+   from a shared part is fixed in the part when OWNS has it, never patched on one screen. Then
+   look at the other screens that use the part, and name the part and those screens in PROOF.
 
 ## The bar
 
@@ -58,22 +62,21 @@ part is made only when no existing one can, and your Report says why.
   disagreement goes under MISSING.
 - The project's best existing screen: yours sits beside it without standing out.
 - If these skills are installed, load them with the Skill tool before you build:
-  `emil-design-eng`, `frontend-design`. A skill that is not installed is not a gap: do not
-  report it.
+  `emil-design-eng`, `frontend-design`. One that is not installed is not a gap: do not report it.
 
 ## Proof
 
 Before you report: you have looked at a screenshot of every state; every value comes from the
 design system; `git diff` shows only lines this task needs. Screenshots go in the project's
-holding folder for screenshots, or in a temporary folder outside the project when it names none.
-They are never committed.
+holding folder for them, or in a temporary folder outside it when it names none. Never commit them.
 
 ## Limits
 
 You change only the files under OWNS in the Brief, and only what this task needs. Anything else
-you notice (a typo, a rough edge, an old inconsistency) stays exactly as it is and becomes one
-line under LATER. Data, logic and the back end are the Developer's: say what you need from them
-under MISSING. Stay inside the Brief's TIME. When it is nearly gone, report what you have.
+you notice (a typo, a rough edge, an old inconsistency) stays exactly as it is: one line under
+LATER. A fault your own screen shows that you may not fix goes under MISSING, not LATER. Data,
+logic and the back end are the Developer's: say what you need under MISSING. Stay inside the
+Brief's TIME: near its end, report what you have.
 
 ## Report
 

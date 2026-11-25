@@ -7,12 +7,15 @@ Start a role with a Brief of exactly these lines:
     SPRINT GOAL: <one sentence>
     TASK: <letter> <title> (normal | small)
     SPEC: <path, or the three lines of a small task>
+    TICKETS: <ticket numbers, when the work comes from a tracker>
     OWNS: <folders this role may change>
     TIME: <minutes>
     DONE MEANS: <the checks, and the project's commit rule>
     CHANGED: <files or commits this task touched>
 
 - CHANGED is for QA and QC only. Give QC the builders' Reports too.
+- TICKETS is for work the product lead gave as tickets: read [TICKETS.md](TICKETS.md) first.
+  With no tickets, leave TICKETS out.
 - Add the project's hard rules a role cannot find by itself: push, commit and secret rules.
 - The BA's Brief, the challenge round and the BA's update pass have their own TASK and SPEC
   lines: see PLAN in STEPS.md. Refine Briefs are in REFINE.md.
@@ -40,6 +43,10 @@ A Report has these lines: VERDICT, MISSING, REUSED, NEW, FINDINGS (QA and QC), L
   the changed file put it right, then start QA and QC again.
 - MISSING: get the piece (another role, the docs, or one question to the product lead) while
   the work goes on. When it arrives, have the assumption checked.
+- NOT READY with FINDINGS `nothing`: a case could not be run. No builder gets it back, and it
+  uses up no check round. Get what is MISSING and check again once. If you cannot, the task is
+  built, not checked: its goal line stays unmarked, and the STOP 2 message lists what
+  nobody could check, for the product lead's eyes. Their answer there settles that goal line.
 - LATER: copy each line into `LATER.md` under Confirmed, unless it is already there. No work
   starts from it.
 - NEW: something made new where an existing thing would do goes back to its builder.

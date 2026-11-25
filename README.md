@@ -27,6 +27,21 @@ review what shipped.
 An idea you mention in the middle of a sprint is noted, not built. At the end you decide whether
 to keep it.
 
+When your project keeps its requirements in a tracker such as Jira, name the tickets and the team
+reads them. The tracker says what is wanted. The spec says what was agreed for this sprint, and
+the team builds and tests from the spec. Where a ticket and the spec disagree, you are told. The
+team never writes to the tracker: what should change there comes to you as a short list.
+
+When your project's instructions name the tracker, the team also reads the whole board. The BA
+reads every ticket in full and keeps a note of it, `BOARD.md`, with your project's other notes:
+a line per ticket, then the clashes it found. The board is read again at each stop, and you are
+told what is new. Reading never starts work: the team builds only what you name or approve.
+
+To lock the tracker, deny its write tools in your project's own `.claude/settings.json`. The rule
+holds for the roles too. Use the tool names your session shows under `/mcp`:
+
+    { "permissions": { "deny": ["mcp__<server>__<write tool>"] } }
+
 Between sprints you can run a refine pass. It is the one time the team looks wide: QA and QC go
 over the whole product, the list for later is sorted and cut to twenty lines, and the team
 proposes what it learned as rules for your project. For one big question, the five roles sit as
